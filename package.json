@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-foundation",     "homepage": "https://github.com/npmdoc/node-npmdoc-foundation",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-foundation.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  foundation (v4.2.1-1)  [![npm package](https://img.shields.io/npm/v/npmdoc-foundation.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-foundation) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-foundation.svg)](https://travis-ci.org/npmdoc/node-npmdoc-foundation)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-foundation",
+    "keywords": [
+        "documentation",
+        "foundation"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_foundation.js",
+    "name": "npmdoc-foundation",
+    "nameAlias": "npmdoc_foundation",
+    "nameOriginal": "npmdoc-foundation",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-foundation.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
